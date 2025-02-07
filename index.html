@@ -13,22 +13,145 @@
     </head>
 
     <body>
-    <div>Type features here and then press the button: </div>
-    <table>
-     <tr>
-     <td>x1 </td>
-     <td> <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput1"/> </td>
-
-     <td> x2 </td>
-     <td>   <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput2"/> </td>
-
-     <td> x3 </td>
-     <td>  <input type="text" style="border:3px solid #F7730E;" value="2" id="testInput3"/> </td>
-
-     <td> x4 </td>
-     <td>   <input type="text" style="border:3px solid #F7730E;" value="3.4" id="testInput4"/> </td>
-     </tr>
-     </table>
+        <div>Type features here and then press the button:</div>
+        <table>
+          <tr>
+            <td>x1</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput1">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+            
+            <td>x2</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput2">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x3</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput3">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x4</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput4">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+          </tr>
+        
+          <tr>
+            <td>x5</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput5">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+            
+            <td>x6</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput6">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x7</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput7">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x8</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput8">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+          </tr>
+        
+          <tr>
+            <td>x9</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput9">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+            
+            <td>x10</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput10">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x11</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput11">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x12</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput12">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+          </tr>
+        
+          <tr>
+            <td>x13</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput13">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+            
+            <td>x14</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput14">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x15</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput15">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+        
+            <td>x16</td>
+            <td>
+              <select style="border:3px solid #F7730E;" id="testInput16">
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        
         
      <button id="get-time" py-click="my_gen_function"  class="py-button">Generate</button>
      <button id="get-time" py-click="my_gen_function">Generate</button>
@@ -53,44 +176,44 @@
                     from pyweb import pydom
 
                     #############################################################################
-
                     def activation_function(z):
                         return np.where( z>=0, 1, 0  )
+                    
 
                     #############################################################################
+                    weights = array([ 0.  ,  0.01,  0.02,  0.01, -0.01,  0.  ,  0.01,  0.  , -0.01,
+                    0.  ,  0.01,  0.  , -0.01, -0.01, -0.01, -0.01])
 
-                    def predict(test_x):
-                        k = 5
-                        distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
-                        k_neighbor_indices = np.argsort(distances)[:k]
-                        labels = [ y_train[i]  for i in k_neighbor_indices  ]
-                        labels_np = np.array( labels  )
-                        pred = int( np.mean(labels_np)  )
-                        return pred
+                    bias = 0.0
+
+                    def predict(X_test, weights, bias):
+                        linear_product = np.dot(X_test, weights) + bias    ## y = w*x + b
+                        y_pred  = activation_function(    linear_product    )
+                        return y_pred
 
                     #####################################################################
 
-                    url1 = ("https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/knn/iris.csv")
-                    iris_pd = pd.read_csv(open_url(url1))
-                    iris_pd['species'] = iris_pd['species'].replace({'setosa':0, 'versicolor':1 , 'virginica':2})
-                    iris_np = iris_pd.to_numpy()
+                    url1 = ("https://github.com/OldMeme21/perceptronminiprioject/blob/main/Letter.csv")
+                    letter_pd = pd.read_csv(open_url(url1))
+                    letter_pd['Letter'] = iris_pd['Letter'].replace({'T':1, 'L':0})
+                    letter_np = iris_pd.to_numpy()
                  
                     #####################################################################
 
-                    np.random.shuffle(iris_np)
+                    np.random.shuffle(letter_np)
 
                     #####################################################################
 
-                    X_train   = iris_np[1:130, :4]
-                    y_train   = iris_np[1:130,  4]
+                    X_train   = letter_np[1:40, :17]
+                    y_train   = letter_np[1:40,  17]
                     
-                    X_test    = iris_np[130:150, :4]
-                    y_test    = iris_np[130:150, 4]
+                    X_test    = letter_np[40:50, :17]
+                    y_test    = letter_np[40:50, 17]
 
                     #####################################################################
 
                     ## look at the test data
-                    testDataXandy = iris_np[130:150, :]
+                    testDataXandy = letter_np[40:50, :]
                     str_np = np.array2string( testDataXandy, precision=2, separator=',', suppress_small=True)
                     text = str(str_np)
                     ## pydom['test-output'].innerHTML =  text   
@@ -99,13 +222,12 @@
                     ######################################################################
 
                     def get_np_conditions_vector():
-                        c1 = float( pydom["#testInput1"][0].value )
-                        c2 = float( pydom["#testInput2"][0].value )
-                        c3 = float( pydom["#testInput3"][0].value )
-                        c4 = float( pydom["#testInput4"][0].value )
+                        conditions_list = []
 
-                       
-                        conditions_list = [c1, c2, c3, c4]
+                        # Loop through all 16 dropdowns
+                        for i in range(1, 17):
+                            conditions_list.append(float(pydom[f"#testInput{i}"][0].value))
+
                         np_conditions_list = np.array(conditions_list)
                         np_conditions_list = np.expand_dims(np_conditions_list, axis=0)
 
