@@ -204,11 +204,11 @@
 
                     #####################################################################
 
-                    X_train   = letter_np[1:40, :17]
-                    y_train   = letter_np[1:40,  17]
+                    X_train   = letter_np[1:40, :15]
+                    y_train   = letter_np[1:40,  16]
                     
-                    X_test    = letter_np[40:50, :17]
-                    y_test    = letter_np[40:50, 17]
+                    X_test    = letter_np[40:50, :15]
+                    y_test    = letter_np[40:50, 16]
 
                     #####################################################################
 
@@ -225,7 +225,7 @@
                         conditions_list = []
 
                         # Loop through all 16 dropdowns
-                        for i in range(1, 17):
+                        for i in range(1, 16):
                             conditions_list.append(float(pydom[f"#testInput{i}"][0].value))
 
                         np_conditions_list = np.array(conditions_list)
