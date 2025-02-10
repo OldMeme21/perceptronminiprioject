@@ -195,7 +195,7 @@
 
                     url1 = ("https://oldmeme21.github.io/perceptronminiprioject/Letter.csv")
                     letter_pd = pd.read_csv(open_url(url1))
-                    letter_pd['Letter'] = iris_pd['Letter'].replace({'T':1, 'L':0})
+                    letter_pd['Letter'] = letter_pd['Letter'].replace({'T':1, 'L':0})
                     letter_np = letter_pd.to_numpy()
                  
                     #####################################################################
